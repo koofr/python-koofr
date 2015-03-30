@@ -23,6 +23,12 @@ class KoofrClient:
         self.set_token(resp.headers['X-Koofr-Token'])
         return True
 
+    def mounts(self):
+        url = self.api_base + "/api/v2/mounts"
+        resp = self.S.get(url)
+        resp.raise_for_status()
+        return resp.json()["mounts"]
+
     def files_get(self, mount_id, path):
         url = self.api_base + "/content/api/v2/mounts/" + mount_id + "/files/get"
         params = {'path': path}

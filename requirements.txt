@@ -1,6 +1,2 @@
-argparse==1.2.1
-py==1.4.26
 pytest==2.7.0
 requests==2.6.0
-test-pkg==0.0
-wsgiref==0.1.2

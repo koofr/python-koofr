@@ -25,6 +25,10 @@ def client():
     assert ret == True
     return client
 
+def test_mounts(client):
+    mounts = client.mounts()
+    assert len(mounts) > 0
+
 def test_new_folder(client, mount_id):
     success = client.files_new_folder(mount_id, posixpath.join(testdir))
     assert success
